@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Areo fly</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    .main {
+        position: relative;
+        height: 100%;
+        width: 100%;
+    }
+    .main>img {
+        height: 100vh;
+        width: 100%;
+        object-fit: cover;
+    }
+    #pln {
+        position: absolute;
+        height: 120px;
+        width: 120px;
+        display: inline-block;
+        top: 10px;
+        left: 10px;
+        transform: scalex(-1);
+        animation: landing 5s linear 1s both;
+    }
+    #bld{
+        position: absolute;
+        height: 350px;
+        width: 350px;
+        display: inline-block;
+        left: 0;
+        bottom: 0px;
+    }
+    #pln:hover{
+        animation-name: crash;
+        animation-duration: 0s;
+    }
+
+    @keyframes landing {
+        0% {
+            left: 10px;
+            top: 10px;    
+        }
+        25% {
+            left: 175px;
+            top: 145px;
+        }
+
+        50% {
+            left: 350px;
+            top:290px;
+        }
+        75% {
+            left: 700px;
+            top: 590px; 
+        }
+        100% {
+            left: 1300px;
+            top: 590px;  
+        }  
+    }
+   
+</style>
+
+<body>
+    <div class="main">
+        <img src="sky.png" alt="image not found" />
+        <img id="pln" src="plane.png" />
+        <img id="bld" src="building.png" /> 
+    </div>
+</body>
+</html>
